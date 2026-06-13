@@ -1,0 +1,5 @@
+[project]
+name = "document-intelligence-llm-pipeline"
+version = "0.1.0"
+description = "OCR and LLM document extraction pipeline with validation and review routing."
+requires-python = ">=3.10"
