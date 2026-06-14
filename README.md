@@ -43,6 +43,14 @@ python -m src.demo
 python -m unittest discover -s tests
 ```
 
+## Included POC Code
+
+- OCR text normalization and PII redaction
+- Regex-backed local extraction adapter for requester, reference ID, and amount
+- Confidence scoring and schema validation gates
+- Human-review routing for unclear or low-confidence documents
+- Sample OCR input in `examples/sample_ocr_text.txt`
+
 ## Production Extensions
 
 - Azure AI Document Intelligence OCR
