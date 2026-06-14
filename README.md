@@ -84,3 +84,9 @@ docker compose up --build
 - Blob Storage ingestion
 - Service Bus event processing
 - Case creation API integration
+
+## Deep Dive
+
+See [docs/deep-dive.md](docs/deep-dive.md) for OCR comparison, chunking and
+metadata strategy, confidence scoring, extraction validation, human review,
+document classification, table/entity extraction, and benchmark guidance.
