@@ -1,0 +1,8 @@
+services:
+  document-intelligence:
+    build: .
+    environment:
+      APP_ENV: local
+      LOG_LEVEL: INFO
+      EXTRACTION_THRESHOLD: "0.75"
+    command: python -m src.demo

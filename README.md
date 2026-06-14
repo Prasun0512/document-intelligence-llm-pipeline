@@ -41,6 +41,7 @@ flowchart LR
 ```bash
 python -m src.demo
 python -m unittest discover -s tests
+docker compose up --build
 ```
 
 ## Included POC Code
@@ -50,6 +51,14 @@ python -m unittest discover -s tests
 - Confidence scoring and schema validation gates
 - Human-review routing for unclear or low-confidence documents
 - Sample OCR input in `examples/sample_ocr_text.txt`
+
+## Engineering Maturity
+
+- Dockerfile and `docker-compose.yml` for local execution
+- GitHub Actions workflow for unit tests
+- `.env.example` for safe configuration hygiene
+- Production readiness notes in `docs/production-readiness.md`
+- Security, monitoring, cost, and scalability considerations documented
 
 ## Production Extensions
 
