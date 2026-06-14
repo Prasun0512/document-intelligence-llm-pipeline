@@ -14,6 +14,23 @@ converted into structured records. Manual extraction is slow and error-prone.
 This repository demonstrates a safe, testable pipeline pattern for OCR + LLM
 document extraction.
 
+## Architecture Decisions and Tradeoffs
+
+- **Decision:** Separate OCR normalization, PII redaction, extraction, schema
+  validation, confidence scoring, and review routing.
+- **Tradeoff:** Multiple stages add orchestration overhead, but each stage becomes
+  testable, observable, and replaceable.
+- **Expected scale:** Designed for batch and queue-based processing where large
+  document backlogs can be handled without blocking validation or review.
+- **Cost strategy:** Cache OCR results by checksum and use deterministic
+  extraction before invoking more expensive LLM workflows.
+- **Security strategy:** Mask sensitive data before logs/prompts and restrict raw
+  artifact access to approved roles.
+- **Operational strategy:** Monitor OCR failures, schema validation errors,
+  confidence distribution, review rate, and per-document latency.
+- **Lessons learned:** Extraction systems need schema validation and review loops,
+  not only prompt instructions.
+
 ## Architecture
 
 ```mermaid
